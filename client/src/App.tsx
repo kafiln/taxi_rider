@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Ride from "./Ride";
+import rides from "./rides.json";
 function App() {
-  const [response, setResponse] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch("http://server:5000/").then((res) => res.text());
-      setResponse(data);
-    };
-    fetchData();
-  }, []);
-
   return (
-
     <>
-    <div>Taxi rider App </div>
-    <pre>
-      {JSON.stringify(response)}
-    </pre>
+      <div>Taxi rider App </div>
+      <ul>
+        {rides && rides.map((ride, index) => <Ride {...ride} key={index} />)}
+      </ul>
     </>
   );
 }
