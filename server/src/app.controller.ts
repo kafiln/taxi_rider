@@ -12,6 +12,6 @@ export class AppController {
     @Query('distance') distance: number,
   ): number {
     //TODO: validate inputs
-    return this.appService.getPrice(duration, startTime, distance);
+    return this.appService.getPrice(startTime, duration, distance);
   }
 }
