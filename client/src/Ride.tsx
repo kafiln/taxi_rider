@@ -25,13 +25,14 @@ const Ride = ({ id, distance, startTime, duration }: RideProps) => {
   };
 
   return (
-    <div
-      style={{ backgroundColor: distance > 2 ? "red" : "" }}
+    <li
+      className={`list-group-item ${ distance > 2 && "list-group-item-danger"}`}
+      style={{cursor:'pointer'}}
       onClick={handleClick}
     >
       {clicked && <span>Clicked </span>}
       Id: {id} {price && <span>- Price {price}</span>}
-    </div>
+    </li>
   );
 };
 
