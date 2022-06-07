@@ -32,7 +32,7 @@ const Ride = ({ id, distance, startTime, duration }: RideProps) => {
     >
       <td> {clicked ? "✅" : "❌"}</td>
       <td>{id}</td>
-      <td>{price} €</td>
+      <td>{`${price} €`} </td>
       <td>{`${distance} mile${distance > 1 ? "s" : ""}`}</td>
       <td>{endTimeFromDuration(startTime, 0)}</td>
       <td>{endTimeFromDuration(startTime, duration)}</td>
